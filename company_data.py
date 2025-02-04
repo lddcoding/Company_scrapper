@@ -23,6 +23,30 @@ with open('GICS.json', 'r') as file:
 
 gics_structure_str = json.dumps(gics_structure)
 
+def find_company_website(company_name, api_key):
+    url = "https://www.googleapis.com/customsearch/v1"
+    params = {
+        "q": company_name,
+        "key": api_key,
+        "cx": "845c0833a412b4955",  
+        "num": 1 
+    }
+    
+    try:
+        response = requests.get(url, params=params)
+        response.raise_for_status()
+        
+        data = response.json()
+        
+        if "items" in data and len(data["items"]) > 0:
+            return data["items"][0]["link"]
+        else:
+            return None
+    
+    except requests.exceptions.RequestException as e:
+        print(f"Error while searching for company website: {e}")
+        return None
+        
 def get_company_info_and_classify(company_name: str, location: str):
     url = "https://api.perplexity.ai/chat/completions"
     headers = {"Authorization": "Bearer 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"}
