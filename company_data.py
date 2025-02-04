@@ -23,6 +23,38 @@ with open('GICS.json', 'r') as file:
 
 gics_structure_str = json.dumps(gics_structure)
 
+def get_linkedin_company_info(company_name):
+    
+    ACCESS_TOKEN = "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"
+    LINKEDIN_API_URL = "https://api.linkedin.com/v2/organizations"
+    
+    headers = {
+        "Authorization": f"Bearer {ACCESS_TOKEN}",
+        "X-Restli-Protocol-Version": "2.0.0",
+        "Content-Type": "application/json"
+    }
+
+    search_url = f"https://api.linkedin.com/v2/organizationAcls?q=organization&organization={company_name}"
+    search_response = requests.get(search_url, headers=headers)
+    
+    if search_response.status_code == 200:
+        data = search_response.json()
+        if "elements" in data and len(data["elements"]) > 0:
+            company_id = data["elements"][0]["organization"]  # Extract Company ID
+            
+            # Fetch company details using the company ID
+            company_url = f"{LINKEDIN_API_URL}/{company_id}"
+            response = requests.get(company_url, headers=headers)
+            
+            if response.status_code == 200:
+                return response.json()  # Returns the company page content
+            else:
+                return {"error": f"Failed to retrieve company data: {response.status_code}"}
+        else:
+            return {"error": "Company not found"}
+    else:
+        return {"error": f"Search request failed: {search_response.status_code}"}
+
 def find_company_website(company_name, api_key):
     url = "https://www.googleapis.com/customsearch/v1"
     params = {
