@@ -1,0 +1,97 @@
+import json
+import requests
+import pandas as pd
+import streamlit as st
+from pydantic import BaseModel
+
+# Define the AnswerFormat for company information and GICS classification
+class AnswerFormat(BaseModel):
+    Company_website: str
+    Industry: str
+    Company_Description: str
+    Nb_full_time_employee: str
+    Headquarters: str
+    Sector: str
+    Industry_Group: str
+    Industry: str
+    Sub_Group: str
+    Management_1: str
+    Management_2: str
+    Management_3: str
+
+# Load the GICS structure from the JSON file
+with open('GICS.json', 'r') as file:
+    gics_structure = json.load(file)
+
+# Prepare the request payload with the GICS structure
+gics_structure_str = json.dumps(gics_structure)
+
+# Function to get company information and classify using GICS structure
+def get_company_info_and_classify(company_name: str, location: str):
+    # Define the Perplexity API endpoint and headers
+    url = "https://api.perplexity.ai/chat/completions"
+    headers = {"Authorization": "Bearer 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"}
+
+    # Prepare the payload with company info and GICS structure
+    payload = {
+        "model": "sonar-pro",
+        "messages": [
+            {"role": "system", "content": "Be an expert in business"},
+            {"role": "user", "content": (
+                f"Make research on {company_name} based in {location}. "
+                "(only output the JSON object and don't put any JSON text or line break) "
+                "For the headquarters, only put the city, and put an exhaustive business description for the business. "
+                "For company achievements put some key facts about the company that would be interesting, such as activities in other places, certification, investors in the company, etc. But don't put anything that is already mentioned in the business description. "
+                "For the different management inputs, find some key management person within the company such as CEO, CFO, CTO, CIO, etc, or other important member of the organisation"
+                f"Classify the business based on the following GICS structure: {gics_structure_str}. "
+                "Please output a JSON object containing the following fields: "
+                "Company_website, Company_Description, Company_Achievements, Nb_full_time_employee, Headquarters, "
+                "Sector, Industry Group, Industry, Sub-Industry, Management_1, Management_2, Management_3."
+            )},
+        ],
+        "response_format": {
+            "type": "json_schema",
+            "json_schema": {"schema": AnswerFormat.model_json_schema()},
+        },
+    }
+
+    # Send the request to Perplexity API
+    response = requests.post(url, headers=headers, json=payload).json()
+
+    # Extract and return the company data
+    json_response = response["choices"][0]["message"]["content"]
+    company_data = json.loads(json_response)
+    return company_data
+
+# Streamlit UI
+st.title("Company Info and Classification Tool")
+
+# Multi-line input for multiple companies
+company_input = st.text_area("Enter Company Names and Locations (one per line, format: Company Name, Location)")
+
+if st.button("Get Company Info"):
+    if company_input:
+        companies = company_input.split('\n')
+        data = []
+
+        # Process each company
+        for company in companies:
+            try:
+                company_name, location = company.split(',')
+                company_name = company_name.strip()
+                location = location.strip()
+
+                # Fetch company information and classification
+                company_info = get_company_info_and_classify(company_name, location)
+                data.append(company_info)
+            except Exception as e:
+                st.error(f"Error processing {company}: {e}")
+
+        # Convert data to DataFrame
+        if data:
+            df = pd.DataFrame(data)
+
+            # Display the DataFrame in the Streamlit app
+            st.dataframe(df)
+    else:
+        st.error("Please enter the company names and locations.")

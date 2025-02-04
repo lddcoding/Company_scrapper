@@ -1,0 +1,315 @@
+{
+    "GICS": {
+      "Energy": {
+        "Energy": {
+          "Energy Equipment & Services": [
+            "Oil & Gas Drilling",
+            "Oil & Gas Equipment & Services"
+          ],
+          "Oil, Gas & Consumable Fuels": [
+            "Integrated Oil & Gas",
+            "Oil & Gas Exploration & Production",
+            "Oil & Gas Refining & Marketing",
+            "Oil & Gas Storage & Transportation",
+            "Coal & Consumable Fuels"
+          ]
+        }
+      },
+      "Materials": {
+        "Materials": {
+          "Chemicals": [
+            "Commodity Chemicals",
+            "Diversified Chemicals",
+            "Fertilizers & Agricultural Chemicals",
+            "Industrial Gases",
+            "Specialty Chemicals"
+          ],
+          "Construction Materials": [
+            "Construction Materials"
+          ],
+          "Containers & Packaging": [
+            "Metal, Glass & Plastic Containers",
+            "Paper & Plastic Packaging Products & Materials"
+          ],
+          "Metals & Mining": [
+            "Aluminum",
+            "Diversified Metals & Mining",
+            "Copper",
+            "Gold",
+            "Precious Metals & Minerals",
+            "Silver",
+            "Steel"
+          ],
+          "Paper & Forest Products": [
+            "Forest Products",
+            "Paper Products"
+          ]
+        }
+      },
+      "Industrials": {
+        "Capital Goods": {
+          "Aerospace & Defense": [
+            "Aerospace & Defense"
+          ],
+          "Building Products": [
+            "Building Products"
+          ],
+          "Construction & Engineering": [
+            "Construction & Engineering"
+          ],
+          "Electrical Equipment": [
+            "Electrical Components & Equipment",
+            "Heavy Electrical Equipment"
+          ],
+          "Industrial Conglomerates": [
+            "Industrial Conglomerates"
+          ],
+          "Machinery": [
+            "Construction Machinery & Heavy Transportation Equipment",
+            "Agricultural & Farm Machinery",
+            "Industrial Machinery & Supplies & Components"
+          ],
+          "Trading Companies & Distributors": [
+            "Trading Companies & Distributors"
+          ]
+        },
+        "Commercial & Professional Services": {
+          "Commercial Services & Supplies": [
+            "Commercial Printing",
+            "Environmental & Facilities Services",
+            "Office Services & Supplies",
+            "Diversified Support Services",
+            "Security & Alarm Services"
+          ],
+          "Professional Services": [
+            "Human Resource & Employment Services",
+            "Research & Consulting Services",
+            "Data Processing & Outsourced Services"
+          ]
+        },
+        "Transportation": {
+          "Air Freight & Logistics": [
+            "Air Freight & Logistics"
+          ],
+          "Passenger Airlines": [
+            "Passenger Airlines"
+          ],
+          "Marine Transportation": [
+            "Marine Transportation"
+          ],
+          "Ground Transportation": [
+            "Rail Transportation",
+            "Cargo Ground Transportation",
+            "Passenger Ground Transportation"
+          ],
+          "Transportation Infrastructure": [
+            "Airport Services",
+            "Highways & Railtracks",
+            "Marine Ports & Services"
+          ]
+        }
+      },
+      "Consumer Discretionary": {
+        "Automobiles & Components": {
+          "Automobile Components": [
+            "Automotive Parts & Equipment",
+            "Tires & Rubber"
+          ],
+          "Automobiles": [
+            "Automobile Manufacturers",
+            "Motorcycle Manufacturers"
+          ]
+        },
+        "Consumer Durables & Apparel": {
+          "Household Durables": [
+            "Consumer Electronics",
+            "Home Furnishings",
+            "Homebuilding",
+            "Household Appliances",
+            "Housewares & Specialties"
+          ],
+          "Leisure Products": [
+            "Leisure Products"
+          ],
+          "Textiles, Apparel & Luxury Goods": [
+            "Apparel, Accessories & Luxury Goods",
+            "Footwear",
+            "Textiles"
+          ]
+        },
+        "Consumer Services": {
+          "Hotels, Restaurants & Leisure": [
+            "Casinos & Gaming",
+            "Hotels, Resorts & Cruise Lines",
+            "Leisure Facilities",
+            "Restaurants"
+          ],
+          "Diversified Consumer Services": [
+            "Education Services",
+            "Specialized Consumer Services"
+          ]
+        },
+        "Consumer Discretionary Distribution & Retail": {
+          "Distributors": [
+            "Distributors"
+          ],
+          "Broadline Retail": [
+            "Broadline Retail"
+          ],
+          "Specialty Retail": [
+            "Apparel Retail",
+            "Computer & Electronics Retail",
+            "Home Improvement Retail",
+            "Other Specialty Retail",
+            "Automotive Retail",
+            "Homefurnishing Retail"
+          ]
+        }
+      },
+      "Consumer Staples": {
+        "Consumer Staples Distribution & Retail": {
+          "Consumer Staples Distribution & Retail": [
+            "Drug Retail",
+            "Food Distributors",
+            "Food Retail",
+            "Consumer Staples Merchandise Retail"
+          ]
+        },
+        "Food, Beverage & Tobacco": {
+          "Beverages": [
+            "Brewers",
+            "Distillers & Vintners",
+            "Soft Drinks & Non-alcoholic Beverages"
+          ],
+          "Food Products": [
+            "Agricultural Products & Services",
+            "Packaged Foods & Meats"
+          ],
+          "Tobacco": [
+            "Tobacco"
+          ]
+        },
+        "Household & Personal Products": {
+          "Household Products": [
+            "Household Products"
+          ],
+          "Personal Care Products": [
+            "Personal Care Products"
+          ]
+        }
+      },
+      "Health Care": {
+        "Health Care Equipment & Services": {
+          "Health Care Equipment & Supplies": [
+            "Health Care Equipment",
+            "Health Care Supplies"
+          ],
+          "Health Care Providers & Services": [
+            "Health Care Distributors",
+            "Health Care Services",
+            "Health Care Facilities",
+            "Managed Health Care"
+          ],
+          "Health Care Technology": [
+            "Health Care Technology"
+          ]
+        },
+        "Pharmaceuticals, Biotechnology & Life Sciences": {
+          "Biotechnology": [
+            "Biotechnology"
+          ],
+          "Pharmaceuticals": [
+            "Pharmaceuticals"
+          ],
+          "Life Sciences Tools & Services": [
+            "Life Sciences Tools & Services"
+          ]
+        }
+      },
+      "Financials": {
+        "Banks": {
+          "Banks": [
+            "Diversified Banks",
+            "Regional Banks"
+          ]
+        },
+        "Financial Services": {
+          "Financial Services": [
+            "Diversified Financial Services",
+            "Multi-Sector Holdings",
+            "Specialized Finance",
+            "Commercial & Residential Mortgage Finance",
+            "Transaction & Payment Processing Services"
+          ],
+          "Consumer Finance": [
+            "Consumer Finance"
+          ],
+          "Capital Markets": [
+            "Asset Management & Custody Banks",
+            "Investment Banking & Brokerage",
+            "Diversified Capital Markets",
+            "Financial Exchanges & Data"
+          ],
+          "Mortgage Real Estate Investment Trusts (REITs)": [
+            "Mortgage REITs"
+          ]
+        },
+        "Insurance": {
+          "Insurance": [
+            "Insurance Brokers",
+            "Life & Health Insurance",
+            "Multi-line Insurance",
+            "Property & Casualty Insurance",
+            "Reinsurance"
+          ]
+        }
+      },
+      "Information Technology": {
+        "Software & Services": {
+          "IT Services": [
+            "IT Consulting & Other Services",
+            "Internet Services & Infrastructure"
+          ],
+          "Software": [
+            "Application Software",
+            "Systems Software"
+          ]
+        },
+        "Technology Hardware & Equipment": {
+          "Communications Equipment": [
+            "Communications Equipment"
+          ],
+          "Technology Hardware, Storage & Peripherals": [
+            "Technology Hardware, Storage & Peripherals"
+          ],
+          "Electronic Equipment, Instruments & Components": [
+            "Electronic Equipment & Instruments",
+            "Electronic Components",
+            "Electronic Manufacturing Services",
+            "Technology Distributors"
+          ]
+        },
+        "Semiconductors & Semiconductor Equipment": {
+          "Semiconductors & Semiconductor Equipment": [
+            "Semiconductor Materials & Equipment",
+            "Semiconductors"
+          ]
+        }
+      },
+      "Communication Services": {
+        "Telecommunication Services": {
+          "Diversified Telecommunication Services": [
+            "Alternative Carriers",
+            "Integrated Telecommunication Services"
+          ],
+          "Wireless Telecommunication Services": [
+            "Wireless Telecommunication Services"
+          ]
+        },
+        "Media & Entertainment": {
+          "Media & Entertainment": []
+        }
+      }
+    }
+  }
+  
