@@ -4,7 +4,6 @@ import pandas as pd
 import streamlit as st
 from pydantic import BaseModel
 
-# Define the AnswerFormat for company information and GICS classification
 class AnswerFormat(BaseModel):
     Company_website: str
     Industry: str
@@ -19,16 +18,12 @@ class AnswerFormat(BaseModel):
     Management_2: str
     Management_3: str
 
-# Load the GICS structure from the JSON file
 with open('GICS.json', 'r') as file:
     gics_structure = json.load(file)
 
-# Prepare the request payload with the GICS structure
 gics_structure_str = json.dumps(gics_structure)
 
-# Function to get company information and classify using GICS structure
 def get_company_info_and_classify(company_name: str, location: str):
-    # Define the Perplexity API endpoint and headers
     url = "https://api.perplexity.ai/chat/completions"
     headers = {"Authorization": "Bearer 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"}
 
@@ -63,10 +58,8 @@ def get_company_info_and_classify(company_name: str, location: str):
     company_data = json.loads(json_response)
     return company_data
 
-# Streamlit UI
 st.title("Company Info and Classification Tool")
 
-# Multi-line input for multiple companies
 company_input = st.text_area("Enter Company Names and Locations (one per line, format: Company Name, Location)")
 
 if st.button("Get Company Info"):
@@ -81,17 +74,13 @@ if st.button("Get Company Info"):
                 company_name = company_name.strip()
                 location = location.strip()
 
-                # Fetch company information and classification
                 company_info = get_company_info_and_classify(company_name, location)
                 data.append(company_info)
             except Exception as e:
                 st.error(f"Error processing {company}: {e}")
 
-        # Convert data to DataFrame
         if data:
             df = pd.DataFrame(data)
-
-            # Display the DataFrame in the Streamlit app
             st.dataframe(df)
     else:
         st.error("Please enter the company names and locations.")
