@@ -8,6 +8,7 @@ class AnswerFormat(BaseModel):
     Company_website: str
     Industry: str
     Company_Description: str
+    Company_Achievements: str
     Nb_full_time_employee: str
     Headquarters: str
     Sector: str
