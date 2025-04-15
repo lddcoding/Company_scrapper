@@ -93,7 +93,7 @@ def get_company_info_and_classify(company_name: str, location: str):
                 f"Make research on {company_name} based in {location}. "
                 "(only output the JSON object and don't put any JSON text or line break) "
                 "For the headquarters, only put the city, and put an exhaustive business description for the business. "
-                "For company achievements put some key facts about the company that would be interesting, such as activities in other places, certification, investors in the company, etc. But don't put anything that is already mentioned in the business description. "
+                "For company achievements put some key facts about the company that would be interesting, such as activities in other places, certification, investors in the company (private equity investment), etc. But don't put anything that is already mentioned in the business description. "
                 "For the different management inputs, find some key management person within the company such as CEO, CFO, CTO, CIO, etc, or other important member of the organisation"
                 f"Classify the business based on the following GICS structure: {gics_structure_str}. "
                 "Please output a JSON object containing the following fields: "
